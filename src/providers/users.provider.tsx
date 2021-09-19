@@ -1,5 +1,3 @@
-import { User } from "@models";
-import { GetUsers } from "@services";
 import {
   createContext,
   ReactNode,
@@ -7,6 +5,8 @@ import {
   useEffect,
   useState,
 } from "react";
+import { User } from "@models";
+import { GetUsers } from "@services";
 
 type UsersContextData = {
   users: Array<User>;
@@ -23,8 +23,8 @@ export const UsersProvider = ({ children }: UsersProviderProps) => {
   const [users, setUsers] = useState<Array<User>>();
 
   useEffect(() => {
-    let getUsers = async () => {
-      let result = await GetUsers();
+    const getUsers = async () => {
+      const result = await GetUsers();
       if (result.data) {
         setUsers(result.data);
       }

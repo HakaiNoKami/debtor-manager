@@ -1,5 +1,4 @@
-import { Debt } from "@models";
-import { NumberFormatter } from "@utils";
+import { useState } from "react";
 import { Tooltip, Button, Modal as AntModal } from "antd";
 import {
   EditOutlined,
@@ -7,10 +6,10 @@ import {
   ExclamationCircleOutlined,
 } from "@ant-design/icons";
 import { FormValues, Modal } from "@components";
-
-import style from "@styles/components/debtItem.module.scss";
+import { Debt } from "@models";
 import { useDebtsContext, useUsersContext } from "@providers";
-import { useState } from "react";
+import style from "@styles/components/debtItem.module.scss";
+import { NumberFormatter } from "@utils";
 
 type DebtItemProps = {
   debt: Debt;
@@ -31,7 +30,7 @@ export const DebtItem = ({ debt }: DebtItemProps) => {
     editDebt(debt);
   };
 
-  const changeDelete = () => {
+  const handleDelete = () => {
     AntModal.confirm({
       title: "Debt remover",
       icon: <ExclamationCircleOutlined />,
@@ -55,7 +54,7 @@ export const DebtItem = ({ debt }: DebtItemProps) => {
           <Button
             shape="circle"
             icon={<DeleteOutlined />}
-            onClick={changeDelete}
+            onClick={handleDelete}
           />
         </Tooltip>
       </div>

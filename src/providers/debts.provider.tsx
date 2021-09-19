@@ -1,5 +1,3 @@
-import { Debt } from "@models";
-import { DeleteDebt, GetDebts, PostDebt, PutDebt } from "@services";
 import {
   createContext,
   ReactNode,
@@ -7,6 +5,8 @@ import {
   useEffect,
   useState,
 } from "react";
+import { Debt } from "@models";
+import { DeleteDebt, GetDebts, PostDebt, PutDebt } from "@services";
 
 type DebtsContextData = {
   debts: Array<Debt>;
@@ -26,8 +26,8 @@ export const DebtsProvider = ({ children }: DebtsProviderProps) => {
   const [debts, setDebts] = useState<Array<Debt>>();
 
   useEffect(() => {
-    let getDebts = async () => {
-      let result = await GetDebts();
+    const getDebts = async () => {
+      const result = await GetDebts();
       if (result.data.success) {
         setDebts(result.data.result);
       }
@@ -49,10 +49,11 @@ export const DebtsProvider = ({ children }: DebtsProviderProps) => {
     const result = await PutDebt(debt);
 
     if (result.data.success) {
-      let newDebts = debts.filter(
-        (currentdebt) => currentdebt._id !== debt._id
+      const idx = debts.findIndex(
+        (currentDebt) => currentDebt._id === debt._id
       );
-      setDebts([...newDebts, debt]);
+      debts[idx] = debt;
+      setDebts(debts);
     }
   };
 
@@ -60,7 +61,7 @@ export const DebtsProvider = ({ children }: DebtsProviderProps) => {
     const result = await DeleteDebt(id);
 
     if (result.data.success) {
-      let newDebts = debts.filter((debt) => debt._id !== id);
+      const newDebts = debts.filter((debt) => debt._id !== id);
       setDebts(newDebts);
     }
   };

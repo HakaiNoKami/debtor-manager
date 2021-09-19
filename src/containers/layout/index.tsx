@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import { Layout as AntLayout, PageHeader, PageHeaderProps } from "antd";
-
 import style from "@styles/containers/layout.module.scss";
 
 const currentYear = new Date().getFullYear();

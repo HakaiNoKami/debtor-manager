@@ -1,2 +1,2 @@
 export * from "./users.provider";
-export * from "./debts.provider"
+export * from "./debts.provider";

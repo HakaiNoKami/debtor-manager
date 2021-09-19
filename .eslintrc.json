@@ -29,7 +29,12 @@
     "eslint-plugin-import-helpers"
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "space-before-function-paren": "off",
     "react/prop-types": "off",
     "no-use-before-define": "off",

@@ -1,11 +1,10 @@
+import { useState } from "react";
+import { Button, Row } from "antd";
 import Head from "next/head";
 import { CardUser, FormValues, Modal } from "@components";
 import { Layout } from "@containers";
 import { Debt } from "@models";
 import { useDebtsContext, useUsersContext } from "@providers";
-import { Button, Row } from "antd";
-import { useState } from "react";
-
 import style from "@styles/pages/index.module.scss";
 
 export const Home = () => {
@@ -16,7 +15,7 @@ export const Home = () => {
   const toggleOpen = () => setOpen(!open);
 
   const addNewDebt = async (values: FormValues) => {
-    let debt: Debt = {
+    const debt: Debt = {
       idUsuario: values.customer,
       motivo: values.reason,
       valor: values.amount,
@@ -42,7 +41,7 @@ export const Home = () => {
         ]}
       >
         <div className={style.userList}>
-          {debts ? (
+          {debts?.length ? (
             <Row>
               {users?.map((user) => (
                 <CardUser key={user.id} user={user} debts={debts} />

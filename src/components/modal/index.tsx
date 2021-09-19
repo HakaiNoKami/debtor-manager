@@ -1,9 +1,8 @@
 import { Modal as AntModal, Form, Select, Input, InputNumber } from "antd";
 import { User } from "@models";
+import style from "@styles/components/modal.module.scss";
 
 const { Option } = Select;
-
-import style from "@styles/components/modal.module.scss";
 
 export type FormValues = {
   amount: number;
@@ -47,7 +46,10 @@ export const Modal = ({
             console.log("Validate Failed:", info);
           })
       }
-      onCancel={toggleOpen}
+      onCancel={() => {
+        form.resetFields();
+        toggleOpen();
+      }}
     >
       <Form
         form={form}

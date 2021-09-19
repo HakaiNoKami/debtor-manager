@@ -7,8 +7,8 @@ const _axiosClient = axios.create({
   baseURL: BaseUrl,
 });
 
-//#region Calls
+// #region Calls
 export const GetUsers = () => {
   return _axiosClient.get<Array<User>>(`users`);
 };
-//#endregion
+// #endregion

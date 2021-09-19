@@ -1,11 +1,10 @@
-import { Debt, User } from "@models";
 import { useMemo } from "react";
 import { Col, Card, Skeleton, Avatar, Collapse } from "antd";
 import { UserOutlined } from "@ant-design/icons";
-import { NumberFormatter } from "@utils";
-
-import style from "@styles/components/cardUser.module.scss";
 import { DebtItem } from "@components";
+import { Debt, User } from "@models";
+import style from "@styles/components/cardUser.module.scss";
+import { NumberFormatter } from "@utils";
 
 const { Meta } = Card;
 const { Panel } = Collapse;

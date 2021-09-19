@@ -41,7 +41,7 @@ _axiosClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-//#region Calls
+// #region Calls
 export const GetDebts = () => {
   return _axiosClient.get<Response<Array<Debt>>>(`divida`);
 };
@@ -69,4 +69,4 @@ export const PutDebt = (debt: Debt) => {
 export const DeleteDebt = (id: string) => {
   return _axiosClient.delete<Response<InternalResult>>(`divida/${id}`);
 };
-//#endregion
+// #endregion
