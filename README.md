@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+**First, add the UUID key to the environment variables:**
+
+In the `.env` file there is a property called `NEXT_PUBLIC_UUID`, add a valid key to access the backend API.
+
+**Second, restore packages:**
+
+Use a package manager to restore all dependency packages in the project.
+
+```bash
+npm install
+# or
+yarn
+```
+
+**Third, run the development server:**
 
 ```bash
 npm run dev
