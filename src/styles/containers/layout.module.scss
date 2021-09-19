@@ -1,0 +1,58 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+
+  .header {
+    padding: 0 2rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      line-height: initial;
+      margin-bottom: initial;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+
+  .content {
+    padding: 1.6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    .main {
+      background: #fff;
+      padding: 2.4rem;
+      flex: 1;
+      height: 100%;
+
+      .pageHeader {
+        padding: 0 0 1.2rem 0;
+        margin-bottom: 1.2rem;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  .footer {
+    padding: 0 2rem 1.6rem;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 425.1px) {
+  .layout {
+    .header,
+    .content,
+    .footer {
+      padding: {
+        left: 5rem;
+        right: 5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.debt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+
+  &:not(:last-child) {
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    margin-bottom: initial;
+  }
+
+  .actions {
+    button {
+      margin-left: 1rem;
+    }
+  }
+}

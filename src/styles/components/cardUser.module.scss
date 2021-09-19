@@ -1,0 +1,33 @@
+.container {
+  padding: 0.8rem;
+
+  .card {
+    .avatar {
+      color: rgba(0, 0, 0, 0.85);
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .description {
+      p,
+      span {
+        font-size: 1.4rem;
+        margin-bottom: initial;
+      }
+
+      .total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .debts {
+    display: flex;
+    flex-direction: column;
+  }
+}
